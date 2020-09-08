@@ -1,6 +1,6 @@
 # ta19project
 
-Need config.php to root folder
+Needed config.php to root folder
 
 ```php
 <?php
@@ -12,3 +12,5 @@ return [
   'database'  => 'db_name'
 ];
 ```
+
+Needed DB table users. setup.php has query
