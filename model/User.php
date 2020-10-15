@@ -1,12 +1,15 @@
 <?php
 
-class User {
-
+class User extends DatabaseQuery
+{
     public $id;
     public $email;
     public $password;
+    public $tableName = 'users';
 
-    public function info () {
+
+    public function info()
+    {
         return $this->email . '(' . $this->id . ')';
     }
 }

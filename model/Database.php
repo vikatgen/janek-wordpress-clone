@@ -1,15 +1,16 @@
 <?php
 
-class Database {
-
+class Database
+{
     public $config;
 
-    public function __construct($config) {
+    public function __construct($config)
+    {
         $this->config = $config;
     }
 
-    public function connection () {
-
+    public function connection()
+    {
         $dsn = "mysql:host={$this->config['host']};dbname={$this->config['database']}";
 
         $options = [
@@ -18,9 +19,9 @@ class Database {
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
         try {
-             return new PDO($dsn, $this->config['username'], $this->config['password'], $options);
+            return new PDO($dsn, $this->config['username'], $this->config['password'], $options);
         } catch (\PDOException $e) {
-             throw new \PDOException($e->getMessage(), (int)$e->getCode());
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
 }
