@@ -5,7 +5,8 @@ class User extends DatabaseQuery
     public $id;
     public $email;
     public $password;
-    public $tableName = 'users';
+    public static $tableName = 'users';
+    public static $className = 'User';
 
 
     public function info()

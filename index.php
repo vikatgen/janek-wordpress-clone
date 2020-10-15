@@ -6,15 +6,17 @@ $users = User::all();
 //print_r($users);
 //exit(json_encode($users));
 
-if (!empty($users)) : foreach ($users as $user) {
-    echo '<pre>';
-    print_r($user->info());
-    echo '</pre>';
-} endif;
+//if (!empty($users)) : foreach ($users as $user) {
+//    echo '<pre>';
+//    print_r($user->info());
+//    echo '</pre>';
+//} endif;
 
-$p = filter_input(INPUT_GET, 'p', FILTER_SANITIZE_STRING);
+//$p = filter_input(INPUT_GET, 'p', FILTER_SANITIZE_STRING);
 
 $p = trim($_SERVER['REQUEST_URI'], '/');
+
+echo $p;
 
 var_dump($p);
 
@@ -33,7 +35,6 @@ if (isset($routes[$p])) {
             require_once $routes[$p]['file_location'];
         }
     } else {
-        require_once $routes[404]['file_location'];
     }
 }
 
@@ -42,11 +43,3 @@ if (isset($routes[$p])) {
 <pre>
 
 <?php
-
-//id
-//email
-//password
-//
-//added_by
-//edited
-//edited_by
